@@ -72,7 +72,7 @@ resource "aws_instance" "web" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["sg-1cbf1176"]
   subnet_id              = "subnet-513a262b"
-  count                  = 2
+  count                  = ${var.num_webs}
 
   tags {
     Identity = "terraform-training-owl"
